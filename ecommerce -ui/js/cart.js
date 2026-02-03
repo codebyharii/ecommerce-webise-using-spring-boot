@@ -1,6 +1,7 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function loadCart()
 {
+    //this is java scrip code for fetch the url
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartItems = document.getElementById("cart-items");
     let totalAmount=0;
