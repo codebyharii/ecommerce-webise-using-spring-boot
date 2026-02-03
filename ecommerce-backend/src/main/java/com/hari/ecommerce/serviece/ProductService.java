@@ -1,0 +1,33 @@
+package com.hari.ecommerce.serviece;
+
+
+import com.hari.ecommerce.repo.ProductRepo;
+import com.hari.ecommerce.model.Product;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ProductService {
+
+    @Autowired
+    ProductRepo productRepo;
+    public List<Product> getAllProducts() {
+        return productRepo.findAll();
+    }
+
+    public Product getProductById(Long id) {
+
+        return productRepo.findById(id).orElse(null);
+    }
+
+    public Product addProduct(Product product) {
+        return productRepo.save(product);
+    }
+
+    public void deleteProduct(Long id) {
+        productRepo.deleteById(id);
+    }
+}
